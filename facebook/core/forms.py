@@ -37,3 +37,4 @@ class PostForm(forms.ModelForm):
             'visible': forms.CheckboxInput(attrs={'class':'form-check-input'}),
             'is_deleted': forms.CheckboxInput(attrs={'class':'form-check-input'}),
         }
+
