@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+
+{{ post.title }}
+
+{% endblock %}
+
+
+    {% block main %}
+        <div class="card">
+            <div class="card-title">
+                {{ post.title }}
+            </div>
+            <div class="card-body">
+                {{ post.content }} <br>
+                {{ post.user}} {{ post.created_at }}
+            </div>
+            <div class="card-footer">
+                {% if request.user == post.user %}
+                <a href="{% url 'edit_post' post.id %} " class="btn btn-warning">
+                    ویرایش
+                </a>
+                <a href="{% url 'delete_post' post.id %} " class="btn btn-danger">
+                    حذف
+                </a>
+                {% endif %}
+                </div>
+        </div>
+    
+    
+    
+        
+         </div>   
+       
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+    {% block title %}
+        لیست پست‌ها
+    {% endblock %}
+
+
+    {% block main %}
+
+    {{ request.user }}
+    <ul class="list-group mt-5">
+        {% for post in posts %}
+
+        <li class="list-group-item d-flex justify-between">
+
+           <a class="link" href="{% url 'post_details' post.id  %}">{{ post.title }}</a>
+
+        </li>
+         {% endfor %}
+    </ul>
+
+        {% endblock %}
